@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.13;
 
 import { IEAS, AttestationRequest, AttestationRequestData, RevocationRequest, RevocationRequestData } from "@eas-contracts/IEAS.sol";
-import { ISchemaRegistry, SchemaRecord, ISchemaResolver } from "@eas-contracts/ISchemaRegistry.sol";
 import { NO_EXPIRATION_TIME, EMPTY_UID } from "@eas-contracts/Common.sol";
 
 /// @title Attester
@@ -49,17 +49,5 @@ contract Attester {
     /// @param uid The UID of the attestation to revoke.
     function revoke(bytes32 schema, bytes32 uid) external {
         _eas.revoke(RevocationRequest({ schema: schema, data: RevocationRequestData({ uid: uid, value: 0 }) }));
-    }
-}
-
-contract Counter {
-    uint256 public number;
-
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
-    }
-
-    function increment() public {
-        number++;
     }
 }
