@@ -1,6 +1,6 @@
 ![test workflow](https://github.com/Turupawn/ScrollEASDemo/actions/workflows/test.yml/badge.svg)
 
-# Scroll Sepila Ethereum Attestation Service (EAS) Demo
+# Scroll Sepoila Ethereum Attestation Service (EAS) Demo
 
 This repo includes a foundry test and script that uses EAS deployment on Scroll Sepolia. You can use this repo to explore the EAS usage and also as a recommended way of implementing EAS on Foundry.
 
@@ -14,7 +14,7 @@ The testing script creates a Schema and makes an Attestation:
 forge test --fork-url https://sepolia-rpc.scroll.io/
 ```
 
-## 🚀 Running the script on-chin
+## 🚀 Running the script on-chain
 
 Creates an Attestation on Scroll Sepolia on an already existing Schema.
 
