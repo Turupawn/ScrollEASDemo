@@ -2,7 +2,7 @@
 
 # Scroll Sepila Ethereum Attestation Service (EAS) Demo
 
-This repo includes a foundry test and script that uses EAS deployment on Scroll Sepolia. You can use this repo to explore the EAS usage and as a recommended way of implementing EAS on Foundry.
+This repo includes a foundry test and script that uses EAS deployment on Scroll Sepolia. You can use this repo to explore the EAS usage and also as a recommended way of implementing EAS on Foundry.
 
 Forks and PRs very welcome!
 
