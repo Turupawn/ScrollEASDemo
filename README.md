@@ -8,7 +8,7 @@ Forks and PRs very welcome!
 
 ## ✅ Running the test
 
-The testing script creates a Schema and makes an attestation:
+The testing script creates a Schema and makes an Attestation:
 
 ```bash
 forge test --fork-url https://sepolia-rpc.scroll.io/
@@ -16,7 +16,7 @@ forge test --fork-url https://sepolia-rpc.scroll.io/
 
 ## 🚀 Running the script on-chin
 
-Creates an attestation on Scroll Sepolia on an already existing Schema.
+Creates an Attestation on Scroll Sepolia on an already existing Schema.
 
 ```bash
 PRIVATE_KEY="YOURPRIVATEKEYHERE" forge script script/Attester.s.sol:MyScript --fork-url https://sepolia-rpc.scroll.io/ --broadcast --legacy
