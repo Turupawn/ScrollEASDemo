@@ -1,66 +1,34 @@
-## Foundry
+![test workflow](https://github.com/Turupawn/ScrollEASDemo/actions/workflows/test.yml/badge.svg)
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Scroll Sepila Ethereum Attestation Service (EAS) Demo
 
-Foundry consists of:
+This repo includes a foundry test and script that uses EAS deployment on Scroll Sepolia. You can use this repo to explore the EAS usage and as a recommended way of implementing EAS on Foundry.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Forks and PRs very welcome!
 
-## Documentation
+## Running the test
 
-https://book.getfoundry.sh/
+The testing script creates a Schema and makes an attestation:
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+forge test --fork-url https://sepolia-rpc.scroll.io/
 ```
 
-### Test
+## Running the script on-chin
 
-```shell
-$ forge test
+Creates an attestation on Scroll Sepolia on an already existing Schema.
+
+```
+PRIVATE_KEY="YOURPRIVATEKEYHERE" forge script script/Attester.s.sol:MyScript --fork-url https://sepolia-rpc.scroll.io/ --broadcast --legacy
 ```
 
-### Format
+This should print something similar to this in the terminal:
 
-```shell
-$ forge fmt
+```
+You created the following Attester contract:
+0x6Be4263881d10b8eA2daE2c9ad6a3DA506804125
+You submitted the following Attestestation:
+0x19dc05d87493c8f814c3672076c5d0e16cd2b2614f68695f1bbc6ffecda1cee9
 ```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+You can query the Attester contract and the Attestation on [Scroll Sepolia EASScan](https://scroll-sepolia.easscan.org/).

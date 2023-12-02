@@ -25,9 +25,9 @@ contract Attester {
 
     /// @notice Attests to a schema that receives a uint256 parameter.
     /// @param schema The schema UID to attest to.
-    /// @param input The uint256 value to pass to to the resolver.
+    /// @param message The string value to pass to to the resolver.
     /// @return The UID of the new attestation.
-    function attest(bytes32 schema, uint256 input) external returns (bytes32) {
+    function attest(bytes32 schema, string memory message) external returns (bytes32) {
         return
             _eas.attest(
                 AttestationRequest({
@@ -37,7 +37,7 @@ contract Attester {
                         expirationTime: NO_EXPIRATION_TIME, // No expiration time
                         revocable: true,
                         refUID: EMPTY_UID, // No references UI
-                        data: abi.encode(input), // Encode a single uint256 as a parameter to the schema
+                        data: abi.encode(msg.sender, message), // Encode the sender address and the string message as a parameter to the schema
                         value: 0 // No value/ETH
                     })
                 })
